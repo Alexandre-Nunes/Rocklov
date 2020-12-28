@@ -1,16 +1,16 @@
 pipeline {
-    agent [
+    agent {
         docker {
             image 'ruby'
         }  
-    ]
+    }
 
     stages {
-        stage('Preparation') [
+        stage('Preparation') {
             steps {
                 sh 'cd api && bundle install'
             }
-       ]
+        }
         stage('Testing') {
             steps {
                 sh ' cd api && rspec'
